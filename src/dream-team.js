@@ -14,6 +14,8 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function createDreamTeam(array) {
+  let obj = {}
+  if (typeof array === 'object' && array !== null && array < obj) {
   let itrmas = [...array].map(function replace(el) {
     if (typeof el === 'string') {
       return el.replace(/\s+/g, '') 
@@ -27,6 +29,11 @@ function createDreamTeam(array) {
   let answer = myarr.map((el) => el.toUpperCase()).sort().join('')
   return answer
 }
+else {
+  return false
+}
+}
+
 
 module.exports = {
   createDreamTeam
