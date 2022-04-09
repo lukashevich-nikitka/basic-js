@@ -14,8 +14,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function createDreamTeam(array) {
-  let obj = {}
-  if (typeof array === 'object' && array !== null && array < obj) {
+  if (array instanceof Array) {
   let itrmas = [...array].map(function replace(el) {
     if (typeof el === 'string') {
       return el.replace(/\s+/g, '') 
