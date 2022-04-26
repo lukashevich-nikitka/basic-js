@@ -14,8 +14,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  * 
  */
 function transform(arr) {
-  try {
-  if (arr instanceof Array) {
+  if (Array.isArray(arr)) {
     let array = [...arr]
     if (array.length == 0) {
       return array
@@ -41,13 +40,9 @@ function transform(arr) {
       return array.filter(Boolean)
     }  
   }
-  else  if (!(arr instanceof Array)){
+  else {
     throw new Error(`'arr' parameter must be an instance of the Array!`);
   }
-}
-catch(e) {
-  console.error(e.message)
-}
 }
 
 module.exports = {
